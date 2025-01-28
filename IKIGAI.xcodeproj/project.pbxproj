@@ -13,6 +13,8 @@
 		FF1E2F702D3F7F86000FEFB4 /* KanbanColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E2F6F2D3F7F86000FEFB4 /* KanbanColumn.swift */; };
 		FF1E2F722D3F7FC1000FEFB4 /* KanbanTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E2F712D3F7FC1000FEFB4 /* KanbanTask.swift */; };
 		FF52B3D12D48B40500E82037 /* KanbanBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52B3D02D48B40500E82037 /* KanbanBoard.swift */; };
+		FF52B3D32D48BED000E82037 /* DataSavingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52B3D22D48BED000E82037 /* DataSavingService.swift */; };
+		FF52B3D52D48BEF900E82037 /* KanbanBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52B3D42D48BEF900E82037 /* KanbanBoardViewModel.swift */; };
 		FF5834F12D3F605900C9482D /* IKIGAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5834F02D3F605900C9482D /* IKIGAIApp.swift */; };
 		FF5834F52D3F605B00C9482D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5834F42D3F605B00C9482D /* Assets.xcassets */; };
 		FF5834F82D3F605B00C9482D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5834F72D3F605B00C9482D /* Preview Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		FF1E2F6F2D3F7F86000FEFB4 /* KanbanColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanColumn.swift; sourceTree = "<group>"; };
 		FF1E2F712D3F7FC1000FEFB4 /* KanbanTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanTask.swift; sourceTree = "<group>"; };
 		FF52B3D02D48B40500E82037 /* KanbanBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanBoard.swift; sourceTree = "<group>"; };
+		FF52B3D22D48BED000E82037 /* DataSavingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSavingService.swift; sourceTree = "<group>"; };
+		FF52B3D42D48BEF900E82037 /* KanbanBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanBoardViewModel.swift; sourceTree = "<group>"; };
 		FF5834ED2D3F605900C9482D /* IKIGAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IKIGAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5834F02D3F605900C9482D /* IKIGAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKIGAIApp.swift; sourceTree = "<group>"; };
 		FF5834F42D3F605B00C9482D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		FF58351C2D3F62BA00C9482D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FF52B3D42D48BEF900E82037 /* KanbanBoardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 		FF58351D2D3F62D800C9482D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FF52B3D22D48BED000E82037 /* DataSavingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -337,8 +343,10 @@
 				FF58353B2D3F71A900C9482D /* AddTaskView.swift in Sources */,
 				FF5835282D3F655000C9482D /* KanbanBoardView.swift in Sources */,
 				FF58352A2D3F65AF00C9482D /* KanbanColumnView.swift in Sources */,
+				FF52B3D52D48BEF900E82037 /* KanbanBoardViewModel.swift in Sources */,
 				FF5835262D3F64F000C9482D /* MainMenuView.swift in Sources */,
 				FF5835242D3F649500C9482D /* TaskPriority.swift in Sources */,
+				FF52B3D32D48BED000E82037 /* DataSavingService.swift in Sources */,
 				FF1E2F722D3F7FC1000FEFB4 /* KanbanTask.swift in Sources */,
 				FF5835202D3F63F600C9482D /* Task.swift in Sources */,
 				FF5835222D3F644200C9482D /* TaskStatus.swift in Sources */,

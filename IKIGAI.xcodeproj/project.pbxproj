@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A75F4F82D5A08E2000B99EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4F72D5A08E2000B99EB /* User.swift */; };
+		6A75F4FA2D5A0964000B99EB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4F92D5A0964000B99EB /* AuthViewModel.swift */; };
+		6A75F4FC2D5A09B8000B99EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4FB2D5A09B7000B99EB /* LoginView.swift */; };
+		6A75F4FE2D5A0D64000B99EB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4FD2D5A0D64000B99EB /* RegisterView.swift */; };
 		FF04B4622D48B0620001A180 /* KanbanBoardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04B4612D48B0620001A180 /* KanbanBoardCard.swift */; };
 		FF04B4642D48B0AA0001A180 /* CreateKanbanBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04B4632D48B0AA0001A180 /* CreateKanbanBoardView.swift */; };
 		FF04B4662D48B1070001A180 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04B4652D48B1070001A180 /* SettingsView.swift */; };
@@ -48,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A75F4F72D5A08E2000B99EB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6A75F4F92D5A0964000B99EB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		6A75F4FB2D5A09B7000B99EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6A75F4FD2D5A0D64000B99EB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		FF04B4612D48B0620001A180 /* KanbanBoardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanBoardCard.swift; sourceTree = "<group>"; };
 		FF04B4632D48B0AA0001A180 /* CreateKanbanBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateKanbanBoardView.swift; sourceTree = "<group>"; };
 		FF04B4652D48B1070001A180 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 				FF1E2F6F2D3F7F86000FEFB4 /* KanbanColumn.swift */,
 				FF1E2F712D3F7FC1000FEFB4 /* KanbanTask.swift */,
 				FF52B3D02D48B40500E82037 /* KanbanBoard.swift */,
+				6A75F4F72D5A08E2000B99EB /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +191,9 @@
 				FF04B4612D48B0620001A180 /* KanbanBoardCard.swift */,
 				FF04B4632D48B0AA0001A180 /* CreateKanbanBoardView.swift */,
 				FF04B4652D48B1070001A180 /* SettingsView.swift */,
+				6A75F4F92D5A0964000B99EB /* AuthViewModel.swift */,
+				6A75F4FB2D5A09B7000B99EB /* LoginView.swift */,
+				6A75F4FD2D5A0D64000B99EB /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,12 +352,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF04B4642D48B0AA0001A180 /* CreateKanbanBoardView.swift in Sources */,
+				6A75F4FE2D5A0D64000B99EB /* RegisterView.swift in Sources */,
 				FF58353B2D3F71A900C9482D /* AddTaskView.swift in Sources */,
 				FF5835282D3F655000C9482D /* KanbanBoardView.swift in Sources */,
 				FF58352A2D3F65AF00C9482D /* KanbanColumnView.swift in Sources */,
 				FF52B3D52D48BEF900E82037 /* KanbanBoardViewModel.swift in Sources */,
 				FF5835262D3F64F000C9482D /* MainMenuView.swift in Sources */,
 				FF5835242D3F649500C9482D /* TaskPriority.swift in Sources */,
+				6A75F4F82D5A08E2000B99EB /* User.swift in Sources */,
+				6A75F4FA2D5A0964000B99EB /* AuthViewModel.swift in Sources */,
 				FF52B3D32D48BED000E82037 /* DataSavingService.swift in Sources */,
 				FF1E2F722D3F7FC1000FEFB4 /* KanbanTask.swift in Sources */,
 				FF5835202D3F63F600C9482D /* Task.swift in Sources */,
@@ -353,6 +368,7 @@
 				FF04B4622D48B0620001A180 /* KanbanBoardCard.swift in Sources */,
 				FF5834F12D3F605900C9482D /* IKIGAIApp.swift in Sources */,
 				FF52B3D12D48B40500E82037 /* KanbanBoard.swift in Sources */,
+				6A75F4FC2D5A09B8000B99EB /* LoginView.swift in Sources */,
 				FF1E2F702D3F7F86000FEFB4 /* KanbanColumn.swift in Sources */,
 				FF04B4662D48B1070001A180 /* SettingsView.swift in Sources */,
 			);

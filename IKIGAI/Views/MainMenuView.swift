@@ -78,3 +78,10 @@ struct MainMenuView: View {
         }
     }
 }
+
+
+struct IKIGAIApp_Preview: PreviewProvider {
+    static var previews: some View {
+        MainMenuView()
+    }
+}

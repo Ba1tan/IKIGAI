@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct AddTaskView: View {
@@ -23,7 +22,9 @@ struct AddTaskView: View {
 
                 Button(action: {
                     if !title.isEmpty {
-                        onSave(title, description)
+                        withAnimation {
+                            onSave(title, description)
+                        }
                         presentationMode.wrappedValue.dismiss()
                     }
                 }) {
@@ -48,4 +49,3 @@ struct AddTaskView: View {
         }
     }
 }
-

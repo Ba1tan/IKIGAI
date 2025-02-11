@@ -13,18 +13,16 @@ struct AddTaskView: View {
                 Form {
                     Section(header: Text("Task Details")) {
                         TextField("Task Title", text: $title)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        TextField("Task Description", text: $description)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                        TextEditor(text: $description)
+                            .frame(height: 100)
+                            .border(Color.gray, width: 1)
                     }
                 }
-                .padding()
 
                 Button(action: {
                     if !title.isEmpty {
-                        withAnimation {
-                            onSave(title, description)
-                        }
+                        onSave(title, description)
                         presentationMode.wrappedValue.dismiss()
                     }
                 }) {

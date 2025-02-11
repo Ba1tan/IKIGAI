@@ -11,6 +11,8 @@
 		6A75F4FA2D5A0964000B99EB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4F92D5A0964000B99EB /* AuthViewModel.swift */; };
 		6A75F4FC2D5A09B8000B99EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4FB2D5A09B7000B99EB /* LoginView.swift */; };
 		6A75F4FE2D5A0D64000B99EB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75F4FD2D5A0D64000B99EB /* RegisterView.swift */; };
+		6ABAE9162D5B85B0009F1CE5 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAE9152D5B85B0009F1CE5 /* EditTaskView.swift */; };
+		6AC1C0EA2D5B6F920097F8F2 /* KanbanTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1C0E92D5B6F920097F8F2 /* KanbanTaskView.swift */; };
 		FF04B4622D48B0620001A180 /* KanbanBoardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04B4612D48B0620001A180 /* KanbanBoardCard.swift */; };
 		FF04B4642D48B0AA0001A180 /* CreateKanbanBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04B4632D48B0AA0001A180 /* CreateKanbanBoardView.swift */; };
 		FF04B4662D48B1070001A180 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04B4652D48B1070001A180 /* SettingsView.swift */; };
@@ -22,9 +24,6 @@
 		FF5834F12D3F605900C9482D /* IKIGAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5834F02D3F605900C9482D /* IKIGAIApp.swift */; };
 		FF5834F52D3F605B00C9482D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5834F42D3F605B00C9482D /* Assets.xcassets */; };
 		FF5834F82D3F605B00C9482D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5834F72D3F605B00C9482D /* Preview Assets.xcassets */; };
-		FF5835022D3F605B00C9482D /* IKIGAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5835012D3F605B00C9482D /* IKIGAITests.swift */; };
-		FF58350C2D3F605B00C9482D /* IKIGAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58350B2D3F605B00C9482D /* IKIGAIUITests.swift */; };
-		FF58350E2D3F605B00C9482D /* IKIGAIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58350D2D3F605B00C9482D /* IKIGAIUITestsLaunchTests.swift */; };
 		FF5835202D3F63F600C9482D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58351F2D3F63F600C9482D /* Task.swift */; };
 		FF5835222D3F644200C9482D /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5835212D3F644200C9482D /* TaskStatus.swift */; };
 		FF5835242D3F649500C9482D /* TaskPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5835232D3F649500C9482D /* TaskPriority.swift */; };
@@ -56,6 +55,8 @@
 		6A75F4F92D5A0964000B99EB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		6A75F4FB2D5A09B7000B99EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6A75F4FD2D5A0D64000B99EB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		6ABAE9152D5B85B0009F1CE5 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		6AC1C0E92D5B6F920097F8F2 /* KanbanTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanTaskView.swift; sourceTree = "<group>"; };
 		FF04B4612D48B0620001A180 /* KanbanBoardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanBoardCard.swift; sourceTree = "<group>"; };
 		FF04B4632D48B0AA0001A180 /* CreateKanbanBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateKanbanBoardView.swift; sourceTree = "<group>"; };
 		FF04B4652D48B1070001A180 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -69,10 +70,7 @@
 		FF5834F42D3F605B00C9482D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF5834F72D3F605B00C9482D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF5834FD2D3F605B00C9482D /* IKIGAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IKIGAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF5835012D3F605B00C9482D /* IKIGAITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKIGAITests.swift; sourceTree = "<group>"; };
 		FF5835072D3F605B00C9482D /* IKIGAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IKIGAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF58350B2D3F605B00C9482D /* IKIGAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKIGAIUITests.swift; sourceTree = "<group>"; };
-		FF58350D2D3F605B00C9482D /* IKIGAIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKIGAIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF58351F2D3F63F600C9482D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		FF5835212D3F644200C9482D /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
 		FF5835232D3F649500C9482D /* TaskPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriority.swift; sourceTree = "<group>"; };
@@ -111,8 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				FF5834EF2D3F605900C9482D /* IKIGAI */,
-				FF5835002D3F605B00C9482D /* IKIGAITests */,
-				FF58350A2D3F605B00C9482D /* IKIGAIUITests */,
 				FF5834EE2D3F605900C9482D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,7 +126,6 @@
 		FF5834EF2D3F605900C9482D /* IKIGAI */ = {
 			isa = PBXGroup;
 			children = (
-				FF58351E2D3F62E900C9482D /* Resources */,
 				FF58351D2D3F62D800C9482D /* Services */,
 				FF58351C2D3F62BA00C9482D /* ViewModels */,
 				FF58351B2D3F62A200C9482D /* Views */,
@@ -148,23 +143,6 @@
 				FF5834F72D3F605B00C9482D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		FF5835002D3F605B00C9482D /* IKIGAITests */ = {
-			isa = PBXGroup;
-			children = (
-				FF5835012D3F605B00C9482D /* IKIGAITests.swift */,
-			);
-			path = IKIGAITests;
-			sourceTree = "<group>";
-		};
-		FF58350A2D3F605B00C9482D /* IKIGAIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FF58350B2D3F605B00C9482D /* IKIGAIUITests.swift */,
-				FF58350D2D3F605B00C9482D /* IKIGAIUITestsLaunchTests.swift */,
-			);
-			path = IKIGAIUITests;
 			sourceTree = "<group>";
 		};
 		FF58351A2D3F622500C9482D /* Models */ = {
@@ -194,6 +172,8 @@
 				6A75F4F92D5A0964000B99EB /* AuthViewModel.swift */,
 				6A75F4FB2D5A09B7000B99EB /* LoginView.swift */,
 				6A75F4FD2D5A0D64000B99EB /* RegisterView.swift */,
+				6AC1C0E92D5B6F920097F8F2 /* KanbanTaskView.swift */,
+				6ABAE9152D5B85B0009F1CE5 /* EditTaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,13 +192,6 @@
 				FF52B3D22D48BED000E82037 /* DataSavingService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		FF58351E2D3F62E900C9482D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +331,9 @@
 				FF58352A2D3F65AF00C9482D /* KanbanColumnView.swift in Sources */,
 				FF52B3D52D48BEF900E82037 /* KanbanBoardViewModel.swift in Sources */,
 				FF5835262D3F64F000C9482D /* MainMenuView.swift in Sources */,
+				6ABAE9162D5B85B0009F1CE5 /* EditTaskView.swift in Sources */,
 				FF5835242D3F649500C9482D /* TaskPriority.swift in Sources */,
+				6AC1C0EA2D5B6F920097F8F2 /* KanbanTaskView.swift in Sources */,
 				6A75F4F82D5A08E2000B99EB /* User.swift in Sources */,
 				6A75F4FA2D5A0964000B99EB /* AuthViewModel.swift in Sources */,
 				FF52B3D32D48BED000E82037 /* DataSavingService.swift in Sources */,
@@ -378,7 +353,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5835022D3F605B00C9482D /* IKIGAITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,8 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF58350E2D3F605B00C9482D /* IKIGAIUITestsLaunchTests.swift in Sources */,
-				FF58350C2D3F605B00C9482D /* IKIGAIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

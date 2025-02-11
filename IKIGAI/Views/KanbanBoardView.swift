@@ -15,10 +15,11 @@ struct KanbanBoardView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 20) {
                     ForEach(Array(columns.enumerated()), id: \.offset) { index, column in
-                        KanbanColumnView(column: column, onAddTask: {
-                            selectedColumnIndex = index
-                            showAddTaskSheet = true
-                        })
+                        KanbanColumnView(
+                            column: column,
+                            onAddTask: { showAddTaskSheet = true; selectedColumnIndex = index },
+                            onDropTask: { task in moveTask(task, to: index) }
+                        )
                     }
                 }
                 .padding()
@@ -27,7 +28,9 @@ struct KanbanBoardView: View {
             .sheet(isPresented: $showAddTaskSheet) {
                 if let index = selectedColumnIndex {
                     AddTaskView { title, description in
-                        addTask(to: index, title: title, description: description)
+                        withAnimation {
+                            addTask(to: index, title: title, description: description)
+                        }
                     }
                 }
             }
@@ -38,5 +41,16 @@ struct KanbanBoardView: View {
         let newTask = KanbanTask(title: title, description: description)
         columns[columnIndex].tasks.append(newTask)
     }
-}
 
+    private func moveTask(_ task: KanbanTask, to columnIndex: Int) {
+        for i in 0..<columns.count {
+            if let index = columns[i].tasks.firstIndex(of: task) {
+                columns[i].tasks.remove(at: index)
+                break
+            }
+        }
+        withAnimation {
+            columns[columnIndex].tasks.append(task)
+        }
+    }
+}

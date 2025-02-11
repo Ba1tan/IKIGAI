@@ -1,25 +1,26 @@
+//
+//  KanbanTaskView.swift
+//  IKIGAI
+//
+//  Created by Anuar Sultanbekov on 11.02.2025.
+//
+
 import SwiftUI
 
 struct KanbanTaskView: View {
     var task: KanbanTask
-
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(task.title)
+                .font(.headline)
+            Text(task.description)
                 .font(.subheadline)
-                .foregroundColor(.white)
-                .padding(8)
-                .frame(maxWidth: .infinity)
-                .background(Color.blue)
-                .cornerRadius(8)
-                .shadow(radius: 3)
-                .padding(.vertical, 4)
+                .foregroundColor(.gray)
         }
-        .onDrag {
-            return NSItemProvider(object: task.title as NSString)
-        }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 0.3)) {}
-        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(8)
+        .shadow(radius: 2)
     }
 }

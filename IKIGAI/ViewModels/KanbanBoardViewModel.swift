@@ -1,39 +1,51 @@
-//
-//  KanbanBoardViewModel.swift
-//  IKIGAI
-//
-//  Created by Nursultan Bukenbayev on 27.01.2025.
-//
-
 import Foundation
+import SwiftUI
 
-class KanbanBoardViewModel: ObservableObject {
-    @Published var columns: [KanbanColumn] = [
-        KanbanColumn(name: "To Do", tasks: []),
-        KanbanColumn(name: "In Progress", tasks: []),
-        KanbanColumn(name: "Done", tasks: [])
-    ]
-
-    func addTask(to columnIndex: Int, title: String, description: String) {
-        let newTask = KanbanTask(title: title, description: description)
-        columns[columnIndex].tasks.append(newTask)
-    }
-
-    func deleteTask(from columnIndex: Int, taskID: UUID) {
-        columns[columnIndex].tasks.removeAll { $0.id == taskID }
-    }
-
-    func updateTask(in columnIndex: Int, taskID: UUID, newTitle: String, newDescription: String) {
-        if let index = columns[columnIndex].tasks.firstIndex(where: { $0.id == taskID }) {
-            columns[columnIndex].tasks[index].title = newTitle
-            columns[columnIndex].tasks[index].description = newDescription
+@MainActor
+class KanbanViewModel: ObservableObject {
+    @Published var kanbanBoard: KanbanBoard?
+    @Published var showAddTask = false
+    private let storage: KanbanStorageService
+    
+    init(storage: KanbanStorageService = KanbanStorageService()) {
+        self.storage = storage
+        Task {
+            await loadKanban()
         }
     }
-
-    func moveTask(from sourceColumnIndex: Int, sourceTaskID: UUID, to destinationColumnIndex: Int) {
-        if let taskIndex = columns[sourceColumnIndex].tasks.firstIndex(where: { $0.id == sourceTaskID }) {
-            let task = columns[sourceColumnIndex].tasks.remove(at: taskIndex)
-            columns[destinationColumnIndex].tasks.append(task)
+    
+    func tasksForStatus(_ status: String) -> [Card] {
+        return kanbanBoard?.cards.filter { $0.status == status } ?? []
+    }
+    
+    func addTask(_ task: Card) {
+        Task {
+            try? await storage.addCard(task)
+            await loadKanban()
+        }
+    }
+    
+    func updateCardStatus(cardID: String, newStatus: String) {
+        Task {
+            try? await storage.updateCardStatus(cardID: cardID, newStatus: newStatus)
+            await loadKanban()
+        }
+    }
+    
+    // New deletion function for a task
+    func deleteTask(cardID: String) {
+        Task {
+            try? await storage.deleteCard(cardID: cardID)
+            await loadKanban()
+        }
+    }
+    
+    private func loadKanban() async {
+        do {
+            kanbanBoard = try await storage.loadKanban()
+        } catch {
+            print("Failed to load kanban:", error)
         }
     }
 }
+

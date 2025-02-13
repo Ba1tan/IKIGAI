@@ -10,5 +10,5 @@ import Foundation
 struct KanbanColumn: Identifiable {
     let id = UUID()
     var name: String
-    var tasks: [KanbanTask]
+    var tasks: [Card]
 }

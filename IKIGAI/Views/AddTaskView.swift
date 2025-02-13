@@ -1,49 +1,42 @@
 import SwiftUI
 
 struct AddTaskView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State private var title: String = ""
-    @State private var description: String = ""
+@ObservedObject
+var viewModel: KanbanViewModel
+@Environment(\.dismiss)
+private var dismiss
 
-    var onSave: (String, String) -> Void
+@State private var title = ""
+@State private var description = ""
+@State private var status = TaskStatus.todo.rawValue
 
-    var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Section(header: Text("Task Details")) {
-                        TextField("Task Title", text: $title)
-
-                        TextEditor(text: $description)
-                            .frame(height: 100)
-                            .border(Color.gray, width: 1)
-                    }
-                }
-
-                Button(action: {
-                    if !title.isEmpty {
-                        onSave(title, description)
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }) {
-                    Text("Save Task")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding()
-                .disabled(title.isEmpty)
-            }
-            .navigationTitle("Add Task")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        presentationMode.wrappedValue.dismiss()
+var body: some View {
+    NavigationView {
+        Form {
+            Section(header: Text("Task Details")) {
+                TextField("Title", text: $title)
+                TextField("Description", text: $description)
+                Picker("Status", selection: $status) {
+                    ForEach(TaskStatus.allCases, id: \.self) { status in
+                        Text(status.rawValue).tag(status.rawValue)
                     }
                 }
             }
         }
+        .navigationTitle("New Task")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancel") { dismiss() }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Add") {
+                    let task = Card(title: title, description: description, status: status)
+                    viewModel.addTask(task)
+                    dismiss()
+                }
+                .disabled(title.isEmpty)
+            }
+        }
     }
+}
 }

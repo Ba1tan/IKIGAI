@@ -1,22 +1,26 @@
 import SwiftUI
 
 struct KanbanColumnView: View {
-    var column: KanbanColumn
-    var onAddTask: () -> Void
-    var onDropTask: (KanbanTask) -> Void
-
+    var status: String
+    var tasks: [Card]
+    var onAddTask: () -> Void = {}
+    var onDropTask: (Card) -> Void = { _ in }
+    var onDeleteTask: (String) -> Void = { _ in }
+    
     var body: some View {
         VStack {
-            Text(column.name)
+            Text(status)
                 .font(.headline)
                 .padding()
-
+            
             VStack {
-                ForEach(column.tasks) { task in
-                    KanbanTaskView(task: task)
-                        .onDrag {
-                            return NSItemProvider(object: task.title as NSString)
-                        }
+                ForEach(tasks) { task in
+                    KanbanTaskView(task: task, onDelete: {
+                        onDeleteTask(task.cardID)
+                    })
+                    .onDrag {
+                        NSItemProvider(object: task.title as NSString)
+                    }
                 }
             }
             .frame(maxWidth: .infinity)
@@ -28,7 +32,7 @@ struct KanbanColumnView: View {
                     _ = first.loadObject(ofClass: NSString.self) { title, _ in
                         if let taskTitle = title as? String {
                             DispatchQueue.main.async {
-                                let droppedTask = KanbanTask(title: taskTitle, description: "")
+                                let droppedTask = Card(title: taskTitle, description: "", status: status)
                                 onDropTask(droppedTask)
                             }
                         }
@@ -36,7 +40,7 @@ struct KanbanColumnView: View {
                 }
                 return true
             }
-
+            
             Button(action: onAddTask) {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 24))
@@ -50,3 +54,4 @@ struct KanbanColumnView: View {
         .shadow(radius: 3)
     }
 }
+

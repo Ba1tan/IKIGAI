@@ -1,0 +1,48 @@
+{
+    "kanbanID": "123",
+    "title": "Project X",
+    "admin": "John Doe",
+    "participants": ["Alice", "Bob", "Charlie"],
+    "dateOfCreation": "2024-06-10T12:00:00Z",
+    "description": "Kanban board for Project X",
+    "cards": [
+        {
+            "cardID": "C1",
+            "title": "Task 1",
+            "description": "task 1"
+            "whoCreated": "Alice",
+            "dateOfCreation": "2024-06-10T13:00:00Z",
+            "color": "Blue",
+            "status": "In Progress",
+            "contentID": "CT1",
+            "whoMakes": "Bob",
+            "datesOfProgress": "2024-06-11T14:30:00Z",
+            "whoDone": "Charlie",
+            "dateOfDone": "2024-06-12T16:00:00Z"
+        },
+        {
+            "cardID": "C2",
+            "title": "Task 2",
+            "whoCreated": "Bob",
+            "dateOfCreation": "2024-06-10T14:00:00Z",
+            "color": "Red",
+            "status": "To Do",
+            "contentID": "CT2",
+            "whoMakes": "Alice",
+            "datesOfProgress": null,
+            "whoDone": "",
+            "dateOfDone": null
+        }
+    ],
+    "content": [
+        {
+            "contentID": "CT1",
+            "contentText": "This is a description of Task 1."
+        },
+        {
+            "contentID": "CT2",
+            "contentText": "This is a description of Task 2."
+        }
+    ]
+}
+

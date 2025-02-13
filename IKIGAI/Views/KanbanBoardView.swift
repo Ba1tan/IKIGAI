@@ -1,56 +1,54 @@
 import SwiftUI
 
 struct KanbanBoardView: View {
-    var boardName: String
-    @State private var columns: [KanbanColumn] = [
-        KanbanColumn(name: "ToDo", tasks: []),
-        KanbanColumn(name: "In Progress", tasks: []),
-        KanbanColumn(name: "Done", tasks: [])
-    ]
-    @State private var showAddTaskSheet = false
-    @State private var selectedColumnIndex: Int?
-
+    @StateObject private var viewModel = KanbanViewModel()
+    var board: KanbanBoard?
+    
+    init(board: KanbanBoard? = nil) {
+        self.board = board
+    }
+    
     var body: some View {
-        NavigationView {
-            ScrollView(.horizontal) {
-                HStack(spacing: 20) {
-                    ForEach(Array(columns.enumerated()), id: \.offset) { index, column in
+        VStack {
+            if let board = board {
+                Text(board.title)
+                    .font(.largeTitle)
+                    .padding()
+            }
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .top, spacing: 16) {
+                    ForEach(TaskStatus.allCases, id: \.self) { status in
                         KanbanColumnView(
-                            column: column,
-                            onAddTask: { showAddTaskSheet = true; selectedColumnIndex = index },
-                            onDropTask: { task in moveTask(task, to: index) }
+                            status: status.rawValue,
+                            tasks: viewModel.tasksForStatus(status.rawValue),
+                            onAddTask: {
+                                viewModel.showAddTask = true
+                            },
+                            onDropTask: { task in
+                                viewModel.addTask(task)
+                            },
+                            onDeleteTask: { cardID in
+                                viewModel.deleteTask(cardID: cardID)
+                            }
                         )
                     }
                 }
                 .padding()
             }
-            .navigationTitle(boardName)
-            .sheet(isPresented: $showAddTaskSheet) {
-                if let index = selectedColumnIndex {
-                    AddTaskView { title, description in
-                        withAnimation {
-                            addTask(to: index, title: title, description: description)
-                        }
-                    }
+        }
+        .navigationTitle(board?.title ?? "Kanban Board")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    viewModel.showAddTask = true
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
         }
-    }
-
-    private func addTask(to columnIndex: Int, title: String, description: String) {
-        let newTask = KanbanTask(title: title, description: description)
-        columns[columnIndex].tasks.append(newTask)
-    }
-
-    private func moveTask(_ task: KanbanTask, to columnIndex: Int) {
-        for i in 0..<columns.count {
-            if let index = columns[i].tasks.firstIndex(of: task) {
-                columns[i].tasks.remove(at: index)
-                break
-            }
-        }
-        withAnimation {
-            columns[columnIndex].tasks.append(task)
+        .sheet(isPresented: $viewModel.showAddTask) {
+            AddTaskView(viewModel: viewModel)
         }
     }
 }
+
